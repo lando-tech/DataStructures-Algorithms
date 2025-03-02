@@ -1,0 +1,8 @@
+[
+{
+  "directory": "C:/Users/aaron/GitHub/DataStructures-Algorithms/algorithms/build",
+  "command": "C:\\mingw64\\bin\\g++.exe  @CMakeFiles/algorithms.dir/includes_CXX.rsp -std=gnu++17 -Wall -Wextra -o CMakeFiles\\algorithms.dir\\src\\main.cpp.obj -c C:\\Users\\aaron\\GitHub\\DataStructures-Algorithms\\algorithms\\src\\main.cpp",
+  "file": "C:/Users/aaron/GitHub/DataStructures-Algorithms/algorithms/src/main.cpp",
+  "output": "CMakeFiles/algorithms.dir/src/main.cpp.obj"
+}
+]
