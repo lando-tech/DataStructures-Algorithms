@@ -1,27 +1,35 @@
 #include "node.h"
+#include <memory>
 
-LeafNode::LeafNode(char character, int frequency)
+void BinaryNode::left(std::unique_ptr<BinaryNode> child)
 {
-    this->frequency = frequency;
-    this->character = character;
+    m_left = std::move(child);
+    m_left->parent = this;
 }
 
-int LeafNode::getFrequency() const
+void BinaryNode::right(std::unique_ptr<BinaryNode> child)
+{
+    m_right = std::move(child);
+    m_right->parent = this;
+}
+
+Node::Node(char character, int frequency)
+{
+    this->character = character;    
+    this->frequency = frequency;
+}
+
+int Node::getFrequency() const
 {
     return frequency;
 }
 
-char LeafNode::getChar()
+char Node::getChar()
 {
     return character;
 }
 
-InternalNode::InternalNode(int frequency)
-{
-    InternalNode node = this;
-}
-
-int Comparator::operator()( const LeafNode& leafOne, const LeafNode& leafTwo )
+int Comparator::operator()( const Node& leafOne, const Node& leafTwo )
 {
     return leafOne.getFrequency() > leafTwo.getFrequency();
 }

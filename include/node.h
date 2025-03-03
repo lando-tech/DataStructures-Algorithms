@@ -1,11 +1,22 @@
-
-
 #include <memory>
 
-class LeafNode
+
+class BinaryNode
+{
+    private:
+        BinaryNode *parent{nullptr};
+        std::unique_ptr<BinaryNode> m_left{};
+        std::unique_ptr<BinaryNode> m_right{};
+
+    public:
+        void left(std::unique_ptr<BinaryNode> child);
+        void right(std::unique_ptr<BinaryNode> child);
+};
+
+class Node : BinaryNode
 {
     public:
-        LeafNode( char character, int frequency );
+        Node(char character, int frequency);
         char getChar();
         int getFrequency() const;
     private:
@@ -13,19 +24,8 @@ class LeafNode
         char character{};
 };
 
-class InternalNode
-{
-    public:
-        InternalNode( int frequency );
-        int getFrequency();
-    private:
-        int frequency;
-        std::unique_ptr<LeafNode> leftNode;
-        std::unique_ptr<LeafNode> rightNode;
-};
-
 class Comparator
 {
     public:
-        int operator() ( const LeafNode& leafOne, const LeafNode& leafTwo );
+        int operator() ( const Node& leafOne, const Node& leafTwo );
 };

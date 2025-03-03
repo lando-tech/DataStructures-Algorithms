@@ -38,31 +38,29 @@ void printFreqTable(std::unordered_map<char, int> freqTable)
 /* Build Priority Queue based on Comparator class to ensure min-heap queue
  * Use LeafNode class to store frequency and character from the Frequency table
  */
-std::priority_queue<LeafNode, std::vector<LeafNode>, Comparator> createPQueue(std::unordered_map<char, int> freqTable)
+std::priority_queue<Node, std::vector<Node>, Comparator> createPQueue(std::unordered_map<char, int> freqTable)
 {
-    std::priority_queue<LeafNode, std::vector<LeafNode>, Comparator> pq{};
+    std::priority_queue<Node, std::vector<Node>, Comparator> pq{};
 
     for ( auto& pairs : freqTable )
     {
-        LeafNode newNode(pairs.first, pairs.second);
+        Node newNode(pairs.first, pairs.second);
         pq.push(newNode);
     }
     
     return pq;
 }
 
-void printPriorityQueue(const std::priority_queue<LeafNode, std::vector<LeafNode>, Comparator>& priorityQ)
+void printPriorityQueue(const std::priority_queue<Node, std::vector<Node>, Comparator>& priorityQ)
 {
     auto tempPQ{priorityQ};
 
     while ( !tempPQ.empty() )
     {
-        auto currentNode{tempPQ.top()};
-        std::cout 
-            << "Node Character: " << currentNode.getChar() << " | " 
-            << "Node Frequency: "<< currentNode.getFrequency() 
-            << '\n';
-        tempPQ.pop();
+      auto currentNode = tempPQ.top();
+      std::cout << "Node Character: " << currentNode.getChar() << " | "
+                << "Node Frequency: " << currentNode.getFrequency() << '\n';
+      tempPQ.pop();
     }   
 }
 
@@ -76,7 +74,7 @@ int main()
 {
     std::string inputString{"This is a string to compress."};
     std::unordered_map<char, int> freqTable{buildFreqTable(inputString)};
-    std::priority_queue<LeafNode, std::vector<LeafNode>, Comparator> priorityQ{ 
+    std::priority_queue<Node, std::vector<Node>, Comparator> priorityQ{ 
         createPQueue(freqTable)
     };
     printPriorityQueue(priorityQ);
