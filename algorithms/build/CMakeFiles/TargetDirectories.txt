@@ -1,4 +1,0 @@
-C:/Users/aaron/GitHub/DataStructures-Algorithms/algorithms/build/CMakeFiles/algorithms.dir
-C:/Users/aaron/GitHub/DataStructures-Algorithms/algorithms/build/CMakeFiles/test.dir
-C:/Users/aaron/GitHub/DataStructures-Algorithms/algorithms/build/CMakeFiles/edit_cache.dir
-C:/Users/aaron/GitHub/DataStructures-Algorithms/algorithms/build/CMakeFiles/rebuild_cache.dir

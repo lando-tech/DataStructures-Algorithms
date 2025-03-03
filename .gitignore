@@ -30,3 +30,6 @@
 *.exe
 *.out
 *.app
+
+# Ignore build directories to allow CMake to be local based on system os
+/build
