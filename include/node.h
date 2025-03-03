@@ -1,10 +1,11 @@
 
 
 #include <memory>
+
 class LeafNode
 {
     public:
-        LeafNode(char character, int frequency);
+        LeafNode( char character, int frequency );
         char getChar();
         int getFrequency() const;
     private:
@@ -15,14 +16,12 @@ class LeafNode
 class InternalNode
 {
     public:
-        InternalNode(
-                int frequency, 
-                std::unique_ptr<LeafNode> leftNode, 
-                std::unique_ptr<LeafNode> rightNode
-                );
+        InternalNode( int frequency );
         int getFrequency();
     private:
         int frequency;
+        std::unique_ptr<LeafNode> leftNode;
+        std::unique_ptr<LeafNode> rightNode;
 };
 
 class Comparator

@@ -33,3 +33,5 @@
 
 # Ignore build directories to allow CMake to be local based on system os
 /build
+
+compile_commands.json

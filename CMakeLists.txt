@@ -5,7 +5,12 @@ project(algorithms VERSION 1.0 LANGUAGES CXX)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
-set(CMAKE_CXX_COMPILER "/usr/bin/g++")
+
+if (WIN32)
+    set(CMAKE_CXX_COMPILEr "C:/mingw64/bin/")
+elseif(UNIX)
+    set(CMAKE_CXX_COMPILER "/usr/bin/g++")
+endif()
 
 include_directories(include)
 
